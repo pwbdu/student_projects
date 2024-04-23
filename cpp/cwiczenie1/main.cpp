@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 float sortowanie(float x[], int n) {
     for (int i = 0; i < n - 1; ++i) {
@@ -23,19 +24,19 @@ int main() {
     float x[100];
     int n;
 
-    std::cout << "Podaj ile liczb (maksymalnie 100): ";
-    std::cin >> n;
+    cout << "Podaj ile liczb (maksymalnie 100): ";
+    cin >> n;
 
-    std::cout << "Podaj " << n << " liczb: ";
+    cout << "Podaj " << n << " liczb: ";
     for (int i = 0; i < n; ++i) {
-        std::cin >> x[i];
+        cin >> x[i];
     }
 
 
 
-    std::cout << "Posortowane liczby: ";
+    cout << "Posortowane liczby: ";
     for (int i = 0; i < n; ++i) {
-        std::cout << x[i] << " ";
+        cout << x[i] << " ";
     }
     return 0;
 }

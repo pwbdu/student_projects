@@ -1,30 +1,41 @@
 #include <iostream>
 
-using namespace std;
+float sortowanie(float x[], int n) {
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = 0; j < n - i - 1; ++j) {
+            if (x[j] > x[j + 1]) {
+            
+                float temp = x[j];
+                x[j] = x[j + 1];
+                x[j + 1] = temp;
+            }
+        }
+    }
+    
+    if (n % 2 == 0) {
+        return (x[n / 2 - 1] + x[n / 2]) / 2.0;
+    } else { 
+        return x[n / 2];
+    }
+}
 
-int main(){
-	int a=0;
-	int b=0;
-	int c=0;
-	int d=0;
-	cin>>a;
-	cin>>b;
-	cin>>c;
-	cin>>d;
-	int t[4]={a,b,c,d};
-		for (int x=0; x<4; x++) {
-		for (int x2=0; x2<4; x2++){
-		if (t[x]>[x2]) {
-				int b2;
-				b2=t[x];
-				t[x]=t[x2];
-				t[x2]=b2;
-			}
-			}
-		}
-	cout<<t[0];
-	cout<<t[1];
-	cout<<t[2];
-	cout<<t[3];
-	return 0;
+int main() {
+    float x[100];
+    int n;
+
+    std::cout << "Podaj ile liczb (maksymalnie 100): ";
+    std::cin >> n;
+
+    std::cout << "Podaj " << n << " liczb: ";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x[i];
+    }
+
+
+
+    std::cout << "Posortowane liczby: ";
+    for (int i = 0; i < n; ++i) {
+        std::cout << x[i] << " ";
+    }
+    return 0;
 }
